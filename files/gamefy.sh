@@ -8,7 +8,7 @@ EOF
 
 if [ ! -f /root/.gamefy ]; then
 	read -p 'Digite o nome do seu usuário: ' NOME
-	echo -e "NOME=$NOME" > /root/.gamefy
+	echo -e "NOME='$NOME'" > /root/.gamefy
 fi
 
 source /root/.gamefy
