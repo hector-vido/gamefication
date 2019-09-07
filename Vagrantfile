@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install -y apache2 sshpass
+    apt-get install -y apache2 sshpass curl
     systemctl stop apache2
     systemctl disable apache2
     chmod -x /usr/sbin/apachectl
