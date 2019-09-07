@@ -6,10 +6,12 @@ cat <<EOF
 ###############################
 EOF
 
-if [ ! -f /home/vagrant/.gamefy ]; then
+if [ ! -f /root/.gamefy ]; then
 	read -p 'Digite o nome do seu usuário: ' NOME
-	echo -e "nome=$NOME\nhost=$HOSTNAME" > /home/vagrant/.gamefy
+	echo -e "nome=$NOME\nhost=$HOSTNAME" > /root/.gamefy
 fi
+
+source /root/.gamefy
 
 clear
 
@@ -52,6 +54,7 @@ cat <<EOF
 Oba! Com o vim instalado ficará bem mais fácil seguir adiante!
 
 EOF
+curl -s -X POST -H 'Content-Type: application/json' https://hectorvido.dev/gamefy.php -d "{\"name\" : \"$NOME\", \"hostname\" : \"$HOSTNAME\", "step" : "1"}"
 
 cat <<EOF
 ###################################
@@ -69,6 +72,7 @@ cat <<EOF
 Funcionou! O apache está respondendo!
 
 EOF
+curl -s -X POST -H 'Content-Type: application/json' https://hectorvido.dev/gamefy.php -d "{\"name\" : \"$NOME\", \"hostname\" : \"$HOSTNAME\", "step" : "2"}"
 
 cat <<EOF
 ###########################################
@@ -88,7 +92,7 @@ cat <<EOF
 Perfeito, finalmente eliminamos essa grande vulnerabilidade!
 
 EOF
-
+curl -s -X POST -H 'Content-Type: application/json' https://hectorvido.dev/gamefy.php -d "{\"name\" : \"$NOME\", \"hostname\" : \"$HOSTNAME\", "step" : "3"}"
 
 cat <<EOF
 ###########################################
@@ -108,6 +112,7 @@ cat <<EOF
 Valeu! Agora nosso scripts automatizados poderão reverter boa parte da situação!
 
 EOF
+curl -s -X POST -H 'Content-Type: application/json' https://hectorvido.dev/gamefy.php -d "{\"name\" : \"$NOME\", \"hostname\" : \"$HOSTNAME\", "step" : "4"}"
 
 cat <<EOF
 ################################################################
@@ -128,6 +133,7 @@ cat <<EOF
 Muito bom! Agora o sistema será atualizado automaticamente toda meia-noite!
 
 EOF
+curl -s -X POST -H 'Content-Type: application/json' https://hectorvido.dev/gamefy.php -d "{\"name\" : \"$NOME\", \"hostname\" : \"$HOSTNAME\", "step" : "5"}"
 
 cat <<EOF
 ##################################################
