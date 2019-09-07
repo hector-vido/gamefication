@@ -27,7 +27,7 @@ Por favor, você é a nossa única esperança. A lista de tarefas a serem verifi
 2 - O "apache" não está iniciando.
 3 - O login do usuário root via ssh está funcionando com a senha "123"! Isso deveria estar bloqueado.
 4 - O usuário "suporte" que possuía a senha "Abc123!" desapareceu, precisamos dele para os acessos ssh.
-5 - Um pequeno serviço chamado "rotina.sh" em /usr/local/bin parou de executar a toda meia-noite.
+5 - Um script em /usr/local/bin/rotina.sh deveria executar à toda meia-noite, mas parece que parou.
 
 Acompanharemos sua resolução, basta executar este script cada vez que desejar validar os passos.
 EOF
