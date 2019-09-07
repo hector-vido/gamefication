@@ -119,14 +119,17 @@ cat <<EOF
 #   5 - Você sabe porque o serviço não está rodando à 00:00?   #
 ################################################################
 EOF
-grep -Eo '^\s*00\s*00\s*\*\s*\*\s*\*\s*\w*\s*(bash)?\s*/usr/local/bin/rotina.sh.*' /etc/crontab > /dev/null
+grep -Eo '^\s*00?\s*00?\s*\*\s*\*\s*\*\s*\w*\s*(bash)?\s*/usr/local/bin/rotina.sh.*' /etc/crontab > /dev/null
 if [ "$?" != 0 ]; then
 	if [ -f /var/spool/cron/crontabs/root ]; then
-		grep -Eo '^\s*00\s*00\s*\*\s*\*\s*\*\s*(bash)?\s*/usr/local/bin/rotina.sh.*' /var/spool/cron/crontabs/root > /dev/null
+		grep -Eo '^\s*00?\s*00?\s*\*\s*\*\s*\*\s*(bash)?\s*/usr/local/bin/rotina.sh.*' /var/spool/cron/crontabs/root > /dev/null
 		if [ "$?" != 0 ]; then
 			echo -e '\nVamos avançar no tempo... já passou da meia noite e a rotina ainda não rodou.'
 			exit 1
 		fi
+	else
+		echo -e '\nVamos avançar no tempo... já passou da meia noite e a rotina ainda não rodou.'
+		exit 1
 	fi
 fi
 
